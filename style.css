@@ -1,0 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    transition: background-color 0.1s ease; 
+    flex: 1 0 calc(100% / 16); /* Default flex value, updated dynamically in JS */
+    aspect-ratio: 1 / 1;
+    background-color:  gray;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
