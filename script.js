@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 let defaultColor = "black";
-let size = 16;
+let size = 20;
 let isMouseDown = false;
 
 
@@ -13,15 +13,15 @@ function createGrid(){
 
 
         div.addEventListener("mousedown", (e) => {
-            if(e.button === 0){
-                div.style.backgroundColor = defaultColor;
+            if(e.button === 0) {
                 isMouseDown = true;
+                div.style.backgroundColor = defaultColor;
             }  
         });
 
 
-        div.addEventListener("mouseover", () => {
-            if(isMouseDown){
+        div.addEventListener("mouseenter", (e) => {
+            if(isMouseDown) {
                 div.style.backgroundColor = defaultColor;
             }
         });
@@ -31,13 +31,16 @@ function createGrid(){
 }
 
 document.addEventListener("mousedown", (e) => {
-    if (e.button === 0) isMouseDown = true;
+    if (e.button === 0) {
+        isMouseDown = true;
+    } 
 });
 
-window.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", () => {
     isMouseDown = false;
 });
 
+document.body.onmousedown = () => false;  
 
 
 
